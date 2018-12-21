@@ -356,3 +356,36 @@ def exchange():
     return render_template("exchange.html",ex=ex)
 ```
 
+
+
+*exchange.html*
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>환율</title>
+    </head>
+    <body>
+        <h2>환율</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>국가</th>
+                    <th>환율</th>
+                </tr>
+            </thead>
+            {%for i in ex.keys():%}
+            <tbody>
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{ex[i]}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            
+        </table>
+    </body>
+</html>
+```
+
